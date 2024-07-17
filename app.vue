@@ -1,6 +1,9 @@
 <template>
-  <NuxtPage />
-  <ClientOnly>
-    <MiniApp />
-  </ClientOnly>
+  <NuxtLayout>
+    <NuxtPage />
+  </NuxtLayout>
 </template>
+
+<script setup lang="ts">
+
+</script>

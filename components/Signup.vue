@@ -8,8 +8,5 @@ function handleUserAuth(user: LoginWidgetUser) {
 </script>
 
 <template>
-  <LoginWidget 
-    bot-username="samplebot"
-    @auth="handleUserAuth"
-  />
+  
 </template>
