@@ -5,22 +5,34 @@ import { useWebApp } from 'vue-tg'
 const initData = useWebApp().initData
 const initDataUnsafe = useWebApp().initDataUnsafe
 
+const user = {
+    first_name: initDataUnsafe.user?.first_name,
+    last_name: initDataUnsafe.user?.last_name,
+    username: initDataUnsafe.user?.username,
+    profile_image_url: 'https://i.pravatar.cc/300',
+}
+
 const { showAlert } = useWebAppPopup()
 </script>
 
 <template>
-    <h1>Mini App - Shop Test</h1>
+    <div>
+        <h1>Mini App - Shop Test</h1>
 
-    <label for="initData">initData</label>
-    <textarea class="w-100" name="initData">
-        {{ initData }}
-    </textarea>
+        <Profile :user="user" />
 
-    <label for="initDataUnsafe">initDataUnsafe</label>
-    <textarea class="w-100" name="initDataUnsafe">
-        {{ initDataUnsafe }}
-    </textarea>
-    <MainButton text="Open alert" @click="() => showAlert('Hello!')" />
+        <label for="initData">initData</label>
+        <textarea class="w-100" name="initData">
+            {{ initData }}
+        </textarea>
+
+        <label for="initDataUnsafe">initDataUnsafe</label>
+        <textarea class="w-100" name="initDataUnsafe">
+            {{ initDataUnsafe }}
+        </textarea>
+        <Signup />
+        <MainButton text="Open alert" @click="() => showAlert('Hello!')" />
+    </div>
 </template>
 
 <style scoped>
