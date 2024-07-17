@@ -11,7 +11,9 @@ const user = {
 }
 </script>
 <template>
-    <div class="my-4">
+    <ClientOnly>
+        <div class="my-4">
         <Profile :user="user" />
     </div>
+    </ClientOnly>
 </template>
